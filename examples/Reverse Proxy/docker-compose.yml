@@ -1,0 +1,26 @@
+version: "2"
+
+services:
+  c2:
+    build:
+      dockerfile: $PWD/Dockerfile
+      context: $PWD
+    image: hak5c2
+    volumes:
+      - c2DB:/home
+    ports:
+      - "2022:2022"
+    hostname: my.domain.com
+    environment:
+      VIRTUAL_HOST: my.domain.com
+      LETSENCRYPT_HOST: my.domain.com
+      LETSENCRYPT_EMAIL: me@mydomain.com
+      VIRTUAL_PORT: 8080
+      db: /home/c2.db
+      reverseProxy: "True"
+      reverseProxyPort: 443
+    network_mode: bridge
+    restart: always
+
+volumes:
+  c2DB:
