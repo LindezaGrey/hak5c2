@@ -6,7 +6,7 @@ Quick start for local tests (assuming your local ip is 192.168.1.1):
 
 ```sh
 docker volume create c2DB
-docker run -d -p 8080:8080 -p 2022:2022 -e db=/home/c2.db -v c2DB:/home --name lindezagrey/hak5c2 --hostname=192.168.1.1 hak5c2
+docker run -d -p 8080:8080 -p 2022:2022 -e db=/home/c2.db -v c2DB:/home --name hak5c2 --hostname=192.168.1.1 lindezagrey/hak5c2
 ```
 
 ## Build options
