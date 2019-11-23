@@ -19,6 +19,7 @@ services:
       db: /home/c2.db
       reverseProxy: "True"
       reverseProxyPort: 443
+      https: "True"
     network_mode: bridge
     restart: always
 
