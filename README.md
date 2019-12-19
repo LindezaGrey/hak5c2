@@ -1,3 +1,5 @@
+![Docker Pulls](https://img.shields.io/docker/pulls/lindezagrey/hak5c2?style=plastic)
+
 # 🐋 Alpine based hak5c² container
 
 This image packs the amazing Hak5C² software into a secure and light weight alpine-linux based docker container.
