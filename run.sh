@@ -4,7 +4,7 @@
 # ugly but readable lel
 # if variable is not empty
 if ! [ -z "$certFile" ]; then
-    certFile="-certfile $certFile"
+    certFile="-certFile $certFile"
 fi
 
 if ! [ -z "$db" ]; then
