@@ -1,21 +1,16 @@
-version: "2"
+version: "3"
 
 services:
-  c2:
-    build:
-      dockerfile: $PWD/Dockerfile
-      context: $PWD
-    image: hak5c2
-    volumes:
-      - c2DB:/home
+  hak5c2:
+    container_name: hak5c2
+    image: lindezagrey/hak5c2
+    restart: always
+    hostname: localhost
     ports:
       - "2022:2022"
       - "8080:8080"
-    hostname: localhost
+    volumes:
+      - ${PWD}/volumes/hak5c2:/home
     environment:
       db: /home/c2.db
-    network_mode: bridge
-    restart: always
 
-volumes:
-  c2DB:
