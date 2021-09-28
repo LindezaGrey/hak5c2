@@ -1,5 +1,10 @@
 version: "3"
 
+# requires immediate action to get generated token for activation 
+#   to get token, run:
+#   docker-compose logs hak5c2 | grep "token"
+# if immediate action was not taken, remove the volume, stop the container, and start it again
+
 services:
   hak5c2:
     container_name: hak5c2
