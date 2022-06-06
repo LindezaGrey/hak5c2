@@ -15,7 +15,9 @@ services:
       - "2022:2022"
       - "8080:8080"
     volumes:
-      - ${PWD}/volumes/hak5c2:/home
+      - c2DB:/home
     environment:
       db: /home/c2.db
 
+volumes:
+  c2DB:
