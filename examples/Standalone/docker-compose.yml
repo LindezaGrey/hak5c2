@@ -1,21 +1,23 @@
-version: "2"
+version: "3"
+
+# requires immediate action to get generated token for activation 
+#   to get token, run:
+#   docker-compose logs hak5c2 | grep "token"
+# if immediate action was not taken, remove the volume, stop the container, and start it again
 
 services:
-  c2:
-    build:
-      dockerfile: $PWD/Dockerfile
-      context: $PWD
-    image: hak5c2
-    volumes:
-      - c2DB:/home
+  hak5c2:
+    container_name: hak5c2
+    image: lindezagrey/hak5c2
+    restart: always
+    hostname: localhost
     ports:
       - "2022:2022"
       - "8080:8080"
-    hostname: localhost
+    volumes:
+      - c2DB:/home
     environment:
       db: /home/c2.db
-    network_mode: bridge
-    restart: always
 
 volumes:
   c2DB:
